@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBModel2StoreContainer" CdmEntityContainer="CRUDDBEntities">
+    <EntitySetMapping Name="setupCompanyAs">
+      <EntityTypeMapping TypeName="DBModel2.setupCompanyA">
+        <MappingFragment StoreEntitySet="setupCompanyA">
+          <ScalarProperty Name="uCompanyID" ColumnName="uCompanyID" />
+          <ScalarProperty Name="uCompanyName" ColumnName="uCompanyName" />
+          <ScalarProperty Name="uCompanyAdd1" ColumnName="uCompanyAdd1" />
+          <ScalarProperty Name="uCompanyAdd2" ColumnName="uCompanyAdd2" />
+          <ScalarProperty Name="uCompanyPhone" ColumnName="uCompanyPhone" />
+          <ScalarProperty Name="uCompanyTag" ColumnName="uCompanyTag" />
+          <ScalarProperty Name="uCurrentPO" ColumnName="uCurrentPO" />
+          <ScalarProperty Name="FYBegMD" ColumnName="FYBegMD" />
+          <ScalarProperty Name="FYEndMD" ColumnName="FYEndMD" />
+          <ScalarProperty Name="FYBegDt" ColumnName="FYBegDt" />
+          <ScalarProperty Name="FYEndDt" ColumnName="FYEndDt" />
+          <ScalarProperty Name="sysBegDt" ColumnName="sysBegDt" />
+          <ScalarProperty Name="sysEndDt" ColumnName="sysEndDt" />
+          <ScalarProperty Name="uMultiCurrency" ColumnName="uMultiCurrency" />
+          <ScalarProperty Name="uActive" ColumnName="uActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="spWebFillRpt" FunctionName="DBModel2.Store.spWebFillRpt">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel2.spWebFillRpt_Result">
+          <ScalarProperty Name="uCoID" ColumnName="uCoID" />
+          <ScalarProperty Name="uName" ColumnName="uName" />
+          <ScalarProperty Name="uAdd" ColumnName="uAdd" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBModel2" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="setupCompanyA">
+    <Key>
+      <PropertyRef Name="uCompanyID" />
+    </Key>
+    <Property Name="uCompanyID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="uCompanyName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="uCompanyAdd1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="uCompanyAdd2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="uCompanyPhone" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="uCompanyTag" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="uCurrentPO" Type="Double" />
+    <Property Name="FYBegMD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FYEndMD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FYBegDt" Type="DateTime" Precision="3" />
+    <Property Name="FYEndDt" Type="DateTime" Precision="3" />
+    <Property Name="sysBegDt" Type="DateTime" Precision="3" />
+    <Property Name="sysEndDt" Type="DateTime" Precision="3" />
+    <Property Name="uMultiCurrency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="uActive" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="CRUDDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="setupCompanyAs" EntityType="Self.setupCompanyA" />
+    <FunctionImport Name="spWebFillRpt" ReturnType="Collection(DBModel2.spWebFillRpt_Result)">
+      <Parameter Name="rptType" Mode="In" Type="String" />
+      <Parameter Name="fillParam1" Mode="In" Type="String" />
+      <Parameter Name="fillParam2" Mode="In" Type="String" />
+      <Parameter Name="fillParam3" Mode="In" Type="String" />
+      <Parameter Name="fillParam4" Mode="In" Type="String" />
+      <Parameter Name="CompanyID" Mode="In" Type="String" />
+      <Parameter Name="UserID" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="spWebFillRpt_Result">
+    <Property Type="String" Name="uCoID" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="uName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="uAdd" Nullable="true" MaxLength="100" />
+  </ComplexType>
+</Schema>

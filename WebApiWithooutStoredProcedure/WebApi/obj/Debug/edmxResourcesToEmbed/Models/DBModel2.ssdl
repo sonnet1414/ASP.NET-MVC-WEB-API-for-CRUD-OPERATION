@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBModel2.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="setupCompanyA">
+    <Key>
+      <PropertyRef Name="uCompanyID" />
+    </Key>
+    <Property Name="uCompanyID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="uCompanyName" Type="nvarchar" MaxLength="100" />
+    <Property Name="uCompanyAdd1" Type="nvarchar" MaxLength="100" />
+    <Property Name="uCompanyAdd2" Type="nvarchar" MaxLength="100" />
+    <Property Name="uCompanyPhone" Type="nvarchar" MaxLength="100" />
+    <Property Name="uCompanyTag" Type="nvarchar" MaxLength="50" />
+    <Property Name="uCurrentPO" Type="float" />
+    <Property Name="FYBegMD" Type="nvarchar" MaxLength="50" />
+    <Property Name="FYEndMD" Type="nvarchar" MaxLength="50" />
+    <Property Name="FYBegDt" Type="datetime" />
+    <Property Name="FYEndDt" Type="datetime" />
+    <Property Name="sysBegDt" Type="datetime" />
+    <Property Name="sysEndDt" Type="datetime" />
+    <Property Name="uMultiCurrency" Type="nvarchar" MaxLength="50" />
+    <Property Name="uActive" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Function Name="spWebFillRpt" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="rptType" Type="nvarchar" Mode="In" />
+    <Parameter Name="fillParam1" Type="nvarchar" Mode="In" />
+    <Parameter Name="fillParam2" Type="nvarchar" Mode="In" />
+    <Parameter Name="fillParam3" Type="nvarchar" Mode="In" />
+    <Parameter Name="fillParam4" Type="nvarchar" Mode="In" />
+    <Parameter Name="CompanyID" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserID" Type="nvarchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="DBModel2StoreContainer">
+    <EntitySet Name="setupCompanyA" EntityType="Self.setupCompanyA" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
